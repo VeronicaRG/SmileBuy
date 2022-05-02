@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -18,7 +19,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
 import {
   Colors,
   DebugInstructions,
@@ -29,7 +29,7 @@ import {
 
 const Section: React.FC<{
   title: string;
-}> = ({children, title}) => {
+}> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
