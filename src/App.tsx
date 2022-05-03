@@ -1,4 +1,5 @@
 import '@src/assets/translation/i18next';
+import '@src/config/reactotron';
 
 import React from 'react';
 
