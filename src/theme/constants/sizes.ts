@@ -34,6 +34,7 @@ export const sizes = {
     hn: 20,
     h4: 18,
     h6: 14,
+    h10: 12,
     b8: 8,
     b10: 10,
   },
