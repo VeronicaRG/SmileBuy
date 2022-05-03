@@ -8,7 +8,7 @@ const { sizes, fonts } = theme;
 
 const fontStyles: { [index: string]: { size: number; font: string } } = {
   h2: { size: sizes.fontSizes.h2, font: fonts.semiBold },
-  hn: { size: sizes.fontSizes.hn, font: fonts.medium },
+  hn: { size: sizes.fontSizes.hn, font: fonts.bold },
   h4: { size: sizes.fontSizes.h4, font: fonts.bold },
   h10: { size: sizes.fontSizes.h10, font: fonts.bold },
   h6: { size: sizes.fontSizes.h6, font: fonts.bold },

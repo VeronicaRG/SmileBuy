@@ -18,6 +18,7 @@ export const sizes = {
     x1: 4,
     x2: 8,
     x4: 16,
+    x5: 20,
     x6: 24,
     x8: 32,
     x10: 40,
