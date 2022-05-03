@@ -1,3 +1,5 @@
+import '@src/assets/translation/i18next';
+
 import React from 'react';
 
 import { Provider } from 'react-redux';
