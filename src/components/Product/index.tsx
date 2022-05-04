@@ -16,7 +16,6 @@ const Product: React.FC<ProductProps> = ({
   price,
   onPress,
 }) => {
-  console.tron.log(image);
   return (
     <Container isBig={isBig}>
       <ImageProduct source={{ uri: image }} isBig={isBig} />

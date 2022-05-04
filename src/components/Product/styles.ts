@@ -5,10 +5,12 @@ import { ProductBigProps } from './types';
 
 export const Container = styled.View<ProductBigProps>`
   width: ${({ isBig }) => (isBig === true ? 170 : 150)}px;
-  height: ${({ isBig }) => (isBig === true ? 265 : 200)}px;
-  margin: ${({ theme }) => theme.sizes.spaces.x5}px
-    ${({ theme }) => theme.sizes.spaces.x4}px;
-  margin-right: ${({ theme }) => theme.sizes.spaces.x8}px;
+  height: ${({ isBig }) => (isBig === true ? 280 : 200)}px;
+  margin: ${({ theme }) => theme.sizes.spaces.x5}px 0;
+  margin-left: ${({ theme }) => theme.sizes.spaces.x4}px;
+  margin-right: ${({ theme }) => theme.sizes.spaces.x10}px;
+  margin-bottom: ${({ isBig, theme }) =>
+    isBig ? theme.sizes.spaces.x5 : theme.sizes.spaces.x6}px;
 `;
 
 export const ImageProduct = styled.Image<ProductBigProps>`
@@ -37,8 +39,8 @@ export const Add = styled.TouchableOpacity<ProductBigProps>`
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 0;
-  top: ${({ isBig }) => (isBig === true ? 95 : 59)}%;
+  right: ${({ isBig }) => (isBig === true ? 0 : 5)}%;
+  top: ${({ isBig }) => (isBig === true ? 90 : 55)}%;
   bottom: 0;
   margin: 0 ${({ theme }) => theme.sizes.spaces.x1}px;
   background: ${({ theme }) => theme.colors.neutral._00};
