@@ -6,7 +6,7 @@ export const Container = styled.TouchableOpacity<CategoryContainersProps>`
   height: 21px;
   background-color: ${({ active, theme }) =>
     active === true ? theme.colors.primary : 'transparent'};
-  margin: 0 ${({ theme }) => theme.sizes.spaces.x1}px;
+  margin-right: ${({ theme }) => theme.sizes.spaces.x1}px;
   border-radius: ${({ theme }) => theme.sizes.radius.x2}px;
   justify-content: center;
   align-items: center;
