@@ -22,6 +22,18 @@
               "pattern": "react",
               "group": "external",
               "position": "before"
+            },{
+              "pattern": "@components/**",
+              "group": "internal",
+              "position": "after"
+            },{
+              "pattern": "@src/**",
+              "group": "internal",
+              "position": "after"
+            },{
+              "pattern": "@ts/**",
+              "group": "internal",
+              "position": "after"
             }],
             "pathGroupsExcludedImportTypes": ["react"],
             "newlines-between": "always",
