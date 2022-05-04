@@ -1,5 +1,12 @@
 {
   "translation": {
-    "greeting": "Hola"
+    "greeting": "Hola",
+    "Home": {
+      "Latest": "Últimos",
+      "Products": "Productos",
+      "List": "Lista",
+      "Filter": "FILTRAR CATEGORIA",
+      "Car": "IR AL CARRITO"
+    }
   }
 }

@@ -1,6 +1,13 @@
-import api from '../api';
+import api from '@src/api';
 
-export async function getProducts() {
+import { Category } from '@ts/app/Category';
+import { Product } from '@ts/app/Product';
+
+export async function getProducts(): Promise<Product[]> {
   const response = await api.get('/products');
+  return response.data;
+}
+export async function getCategories(): Promise<Category[]> {
+  const response = await api.get('/products/categories');
   return response.data;
 }
