@@ -16,8 +16,23 @@ const fontStyles: { [index: string]: { size: number; font: string } } = {
   b10: { size: sizes.fontSizes.b10, font: fonts.medium },
 };
 
+function getTextSpaces(props: BaseTextProps) {
+  if (!props.margin) return 0;
+  const spaces = theme.sizes.spaces;
+  if (props.margin.all) return spaces[props.margin.all];
+  if (props.margin.left) return spaces[props.margin.left];
+  if (props.margin.right) return spaces[props.margin.right];
+  if (props.margin.bottom) return spaces[props.margin.bottom];
+  if (props.margin.top) return spaces[props.margin.top];
+  if (props.margin.vertical) return `${spaces[props.margin.vertical]} 0`;
+  if (props.margin.horizontal) return `0 ${spaces[props.margin.horizontal]}`;
+  return 0;
+}
+
 export const StyledText = styled(Text)<BaseTextProps>`
   font-size: ${({ size }) => fontStyles[size].size}px;
   font-family: ${({ size }) => fontStyles[size].font};
   color: ${({ color }) => color || theme.colors.neutral._99};
+  margin: ${props => getTextSpaces(props)}px;
+  ${({ align }) => align && `text-align:${align}`}
 `;
