@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { FlatList } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -23,13 +24,14 @@ import {
 import { HomeProps } from './types';
 
 const HomeView: React.FC<HomeProps> = ({
+  newProductsList,
   productsList,
   categoriesList,
   quantity,
-  goCart,
 }) => {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
+  const navigation = useNavigation();
 
   return (
     <Container safeArea={insets}>
@@ -44,7 +46,7 @@ const HomeView: React.FC<HomeProps> = ({
           <>
             <Header>
               <BaseText size="h4">{t('Home.Products')}</BaseText>
-              <CarView onPress={goCart}>
+              <CarView onPress={() => navigation.navigate('Cart')}>
                 <Car color={theme.colors.primary} width={18} height={20} />
                 {!!quantity && (
                   <CarAmount>
@@ -81,7 +83,7 @@ const HomeView: React.FC<HomeProps> = ({
                 {t('Home.News')}
               </BaseText>
               <FlatList
-                data={productsList}
+                data={newProductsList}
                 keyExtractor={item => `${item.id}`}
                 horizontal={true}
                 renderItem={({ item }) => (
@@ -99,7 +101,12 @@ const HomeView: React.FC<HomeProps> = ({
       />
       {!!quantity && (
         <ButtonView safeArea={insets}>
-          <Button onPress={goCart} title={t('Home.Car')} />
+          <Button
+            onPress={() => {
+              navigation.navigate('Cart');
+            }}
+            title={t('Home.Car')}
+          />
         </ButtonView>
       )}
     </Container>
