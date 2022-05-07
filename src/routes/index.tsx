@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Cart from '@src/screens/Cart';
 import Home from '@src/screens/Home';
 
+import SaleSuccessful from '../screens/SaleSuccessful';
 import { RootStackParamList } from './types';
 
 export const navigationRef = createNavigationContainerRef();
@@ -27,6 +28,11 @@ const Routes: React.FC = () => {
         <Stack.Screen
           name="Cart"
           component={Cart}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SaleSuccessful"
+          component={SaleSuccessful}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

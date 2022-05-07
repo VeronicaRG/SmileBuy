@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useDispatch } from 'react-redux';
 
 import AddedProduct from '@components/AddedProduct';
 import BaseText from '@components/BaseText';
@@ -10,6 +11,7 @@ import Button from '@components/Button';
 
 import Arrow from '@src/assets/svgs/arrow.svg';
 import Logo from '@src/assets/svgs/logo.svg';
+import { buyIt } from '@src/redux/reducers/cart';
 import { ItemCart } from '@src/redux/types';
 import { theme } from '@src/theme';
 import { formatToCurrency } from '@src/utils/number';
@@ -32,6 +34,12 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const continueShopping = () => {
+    dispatch(buyIt());
+    navigation.navigate('SaleSuccessful');
+  };
 
   return (
     <FullContainer safeArea={insets}>
@@ -66,7 +74,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
               color={theme.colors.neutral._45}>
               {t('Cart.EmptyCart')}
             </BaseText>
-            <ButtonView onPress={() => navigation.goBack()}>
+            <ButtonView onPress={navigation.goBack}>
               <BaseText size="h6" color={theme.colors.neutral._00}>
                 {t('Cart.AddItem')}
               </BaseText>
@@ -93,7 +101,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
               {formatToCurrency(totalAmount)}
             </BaseText>
           </Total>
-          <Button title={t('Cart.Finish')} />
+          <Button onPress={continueShopping} title={t('Cart.Finish')} />
         </ViewTotal>
       )}
     </FullContainer>

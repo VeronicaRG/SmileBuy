@@ -16,6 +16,11 @@
       "MyCart": "My cart",
       "Total": "Total",
       "Finish": "FINALIZE PURCHASE"
+    },
+    "SaleSuccessful": {
+      "Continue": "CONTINUE",
+      "Successful": "SUCCESSFUL!",
+      "Description": "Successful order, enjoy!"
     }
   }
 }

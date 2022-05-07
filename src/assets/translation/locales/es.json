@@ -16,6 +16,11 @@
       "EmptyCart": "NI UN PRODUCTO ADDICIONADO EN EL CARRITO",
       "Total": "Total",
       "Finish": "FINALIZAR COMPRA"
+    },
+    "SaleSuccessful": {
+      "Continue": "CONTINUAR",
+      "Successful": "¡EXITOSO!",
+      "Description": "Compra exitosa, ¡disfrute!"
     }
   }
 }

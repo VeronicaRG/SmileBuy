@@ -16,6 +16,11 @@
       "EmptyCart": "NENHUM ITEM ADICIONADO NO CARRINHO",
       "Total": "Total",
       "Finish": "FINALIZAR COMPRA"
+    },
+    "SaleSuccessful": {
+      "Continue": "PROSSEGUIR",
+      "Successful": "SUCESSO!",
+      "Description": "Compra realizada com sucesso, aproveite!"
     }
   }
 }

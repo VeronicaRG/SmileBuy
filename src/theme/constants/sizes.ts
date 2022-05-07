@@ -33,11 +33,13 @@ export const sizes = {
   },
   fontSizes: {
     h2: 24,
+    h3: 22,
     hn: 20,
     h4: 18,
     h6: 14,
     h10: 12,
     b8: 8,
     b10: 10,
+    b14: 14,
   },
 };
