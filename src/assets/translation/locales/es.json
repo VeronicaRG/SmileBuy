@@ -6,7 +6,16 @@
       "Products": "Productos",
       "List": "Lista",
       "Filter": "FILTRAR CATEGORIA",
-      "Car": "IR AL CARRITO"
+      "Car": "IR AL CARRITO",
+      "News": "Novedades"
+    },
+    "Cart": {
+      "Cart": "CARRITO",
+      "MyCart": "Mi Carrito",
+      "AddItem": "ADICIONAR PRODUCTOS",
+      "EmptyCart": "NI UN PRODUCTO ADDICIONADO EN EL CARRITO",
+      "Total": "Total",
+      "Finish": "FINALIZAR COMPRA"
     }
   }
 }

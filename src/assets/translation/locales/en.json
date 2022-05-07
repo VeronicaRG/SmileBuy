@@ -8,6 +8,14 @@
       "List": "List",
       "Filter": "FILTER CATEGORY",
       "Car": "GO TO THE CAR"
+    },
+    "Cart": {
+      "EmptyCart": "NO ITEMS ADDED TO YOUR CART",
+      "AddItem": "ADD ITEMS",
+      "Cart": "CART",
+      "MyCart": "My cart",
+      "Total": "Total",
+      "Finish": "FINALIZE PURCHASE"
     }
   }
 }

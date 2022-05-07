@@ -1,11 +1,13 @@
 import React from 'react';
 
-import AddIcon from '@src/assets/svgs/add.svg';
+import BaseText from '@components/BaseText';
 
-import { useAppDispatch } from '../../redux/hooks';
-import { addProductToCart } from '../../redux/reducers/cart';
-import { theme } from '../../theme';
-import BaseText from '../BaseText';
+import AddIcon from '@src/assets/svgs/add.svg';
+import { useAppDispatch } from '@src/redux/hooks';
+import { addProductToCart } from '@src/redux/reducers/cart';
+import { theme } from '@src/theme';
+import { formatToCurrency } from '@src/utils/number';
+
 import { Add, Container, ImageProduct, Price, Description } from './styles';
 import { ProductProps } from './types';
 
@@ -37,7 +39,7 @@ const Product: React.FC<ProductProps> = props => {
         </>
       )}
       <Price size="hn" color={theme.colors.primary} isBig={isBig}>
-        {`$${price}`}
+        {`${formatToCurrency(price)}`}
       </Price>
 
       <Add onPress={handleAddToCart} isBig={isBig}>

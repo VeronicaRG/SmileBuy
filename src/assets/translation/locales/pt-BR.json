@@ -3,11 +3,19 @@
     "greeting": "Oi",
     "Home": {
       "Latest": "Últimos",
-      "News": "Novedades",
+      "News": "Novidades",
       "Products": "Produtos",
       "List": "Listagem",
       "Filter": "FILTRAR CATEGORIA",
       "Car": "IR PARA O CARRINHO"
+    },
+    "Cart": {
+      "Cart": "CARRINHO",
+      "MyCart": "Meu Carrinho",
+      "AddItem": "ADICIONAR ITEMS",
+      "EmptyCart": "NENHUM ITEM ADICIONADO NO CARRINHO",
+      "Total": "Total",
+      "Finish": "FINALIZAR COMPRA"
     }
   }
 }

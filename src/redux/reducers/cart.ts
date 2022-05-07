@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Product } from '../../@types/app/Product';
+import { Product } from '@ts/app/Product';
+
 import { CartStore } from '../types';
 
 const initialState: CartStore = {
@@ -34,9 +35,32 @@ export const cartSlice = createSlice({
       state.quantity = state.quantity + 1;
       state.totalAmount = state.totalAmount + product.price;
     },
+    reduceProduct: (state, action: PayloadAction<Product>) => {
+      const product = action.payload;
+      const productOnCart = state.items.find(
+        itemCart => itemCart.product.id === product.id,
+      );
+      if (productOnCart && productOnCart.quantity > 1) {
+        productOnCart.quantity--;
+        productOnCart.totalAmount -= product.price;
+        state.totalAmount -= product.price;
+      } else {
+        state.items = state.items.filter(
+          itemCart => itemCart.product.id !== product.id,
+        );
+        state.quantity--;
+        if (state.items.length) {
+          state.totalAmount -= product.price;
+          state.quantity--;
+        } else {
+          state.totalAmount = 0;
+          state.quantity = 0;
+        }
+      }
+    },
   },
 });
 
-export const { addProductToCart } = cartSlice.actions;
+export const { addProductToCart, reduceProduct } = cartSlice.actions;
 
 export default cartSlice.reducer;

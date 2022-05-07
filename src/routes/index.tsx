@@ -6,25 +6,27 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from '../screens/Home';
-import Login from '../screens/Login';
+import Cart from '@src/screens/Cart';
+import Home from '@src/screens/Home';
+
+import { RootStackParamList } from './types';
 
 export const navigationRef = createNavigationContainerRef();
 
 const Routes: React.FC = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="Home"
+          component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="Cart"
+          component={Cart}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
