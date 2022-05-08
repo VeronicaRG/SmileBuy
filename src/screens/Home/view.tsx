@@ -28,6 +28,9 @@ const HomeView: React.FC<HomeProps> = ({
   productsList,
   categoriesList,
   quantity,
+  onPressCategory,
+  selectedCategoryIndex,
+  productsByCategory,
 }) => {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
@@ -36,7 +39,7 @@ const HomeView: React.FC<HomeProps> = ({
   return (
     <Container safeArea={insets}>
       <FlatList
-        data={productsList}
+        data={selectedCategoryIndex ? productsByCategory : productsList}
         keyExtractor={item => `${item.id}`}
         horizontal={false}
         contentContainerStyle={{
@@ -72,27 +75,40 @@ const HomeView: React.FC<HomeProps> = ({
               data={categoriesList}
               keyExtractor={item => item}
               horizontal={true}
-              renderItem={({ item }) => (
-                <Category active={false} category={item} />
+              renderItem={({ item: category, index }) => (
+                <Category
+                  onPress={() => onPressCategory(category)}
+                  active={index === selectedCategoryIndex}
+                  category={category}
+                />
               )}
             />
-            <ProductsView>
-              <BaseText
-                style={{ paddingLeft: theme.sizes.spaces.x4 }}
-                size="h2">
-                {t('Home.News')}
-              </BaseText>
-              <FlatList
-                data={newProductsList}
-                keyExtractor={item => `${item.id}`}
-                horizontal={true}
-                renderItem={({ item }) => (
-                  <Product isBig={true} key={item.id} {...item} />
-                )}
-              />
-            </ProductsView>
-            <BaseText style={{ paddingLeft: theme.sizes.spaces.x4 }} size="h2">
-              {t('Home.List')}
+            {!selectedCategoryIndex && (
+              <ProductsView>
+                <BaseText
+                  style={{ paddingLeft: theme.sizes.spaces.x4 }}
+                  size="h2">
+                  {t('Home.News')}
+                </BaseText>
+                <FlatList
+                  data={newProductsList}
+                  keyExtractor={item => `${item.id}`}
+                  horizontal={true}
+                  renderItem={({ item }) => (
+                    <Product isBig={true} key={item.id} {...item} />
+                  )}
+                />
+              </ProductsView>
+            )}
+            <BaseText
+              margin={{
+                left: 'x4',
+                top: selectedCategoryIndex ? 'x4' : undefined,
+              }}
+              size="h2">
+              {selectedCategoryIndex
+                ? categoriesList[selectedCategoryIndex]
+                : t('Home.List')}
             </BaseText>
           </>
         )}

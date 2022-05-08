@@ -22,14 +22,15 @@ const fontStyles: { [index: string]: { size: number; font: string } } = {
 function getTextSpaces(props: BaseTextProps) {
   if (!props.margin) return 0;
   const spaces = theme.sizes.spaces;
+
   if (props.margin.all) return `${spaces[props.margin.all]}px`;
-  if (props.margin.top) return `${spaces[props.margin.top]}px 0 0 0`;
-  if (props.margin.right) return ` 0 ${spaces[props.margin.right]}px 0 0`;
-  if (props.margin.bottom) return `0 0 ${spaces[props.margin.bottom]}px 0`;
-  if (props.margin.left) return `0 0 0 ${spaces[props.margin.left]}`;
-  if (props.margin.vertical) return `${spaces[props.margin.vertical]}px 0`;
-  if (props.margin.horizontal) return `0 ${spaces[props.margin.horizontal]}px`;
-  return 0;
+
+  let top = props.margin.top ? spaces[props.margin.top] : 0;
+  let right = props.margin.right ? spaces[props.margin.right] : 0;
+  let bottom = props.margin.bottom ? spaces[props.margin.bottom] : 0;
+  let left = props.margin.left ? spaces[props.margin.left] : 0;
+
+  return `${top}px ${right}px ${bottom}px ${left}px`;
 }
 
 export const StyledText = styled(Text)<BaseTextProps>`
@@ -37,5 +38,11 @@ export const StyledText = styled(Text)<BaseTextProps>`
   font-family: ${({ size }) => fontStyles[size].font};
   color: ${({ color }) => color || theme.colors.neutral._99};
   margin: ${props => getTextSpaces(props)};
-  ${({ align }) => align && `text-align:${align}`}
+  ${({ align }) => align && `text-align:${align}`};
+  ${({ margin }) =>
+    margin?.horizontal &&
+    `padding-horizontal: ${theme.sizes.spaces[margin.horizontal]}px`}
+  ${({ margin }) =>
+    margin?.vertical &&
+    `padding-vertical:  ${theme.sizes.spaces[margin.vertical]}px`}
 `;

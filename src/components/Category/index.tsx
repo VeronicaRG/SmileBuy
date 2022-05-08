@@ -1,18 +1,17 @@
 import React from 'react';
 
-import { theme } from '../../theme';
-import BaseText from '../BaseText';
+import BaseText from '@components/BaseText';
+
+import { theme } from '@src/theme';
+
 import { Container } from './styles';
 import { CategoryProps } from './types';
 
-const Category: React.FC<CategoryProps> = ({ active, category }) => {
+const Category: React.FC<CategoryProps> = ({ active, category, onPress }) => {
   return (
-    <Container active={active}>
+    <Container onPress={onPress} active={active}>
       {active ? (
-        <BaseText
-          style={{ textAlign: 'center' }}
-          size="b8"
-          color={theme.colors.neutral._00}>
+        <BaseText align="center" size="b8" color={theme.colors.neutral._00}>
           {category}
         </BaseText>
       ) : (

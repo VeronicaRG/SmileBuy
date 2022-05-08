@@ -1,4 +1,4 @@
-import { Category } from '../../@types/app/Category';
+import { Category } from '@ts/app/Category';
 
 export interface CategoryContainersProps {
   active: boolean;
@@ -6,4 +6,5 @@ export interface CategoryContainersProps {
 
 export interface CategoryProps extends CategoryContainersProps {
   category: Category;
+  onPress: () => void;
 }

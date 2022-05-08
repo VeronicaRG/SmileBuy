@@ -14,13 +14,12 @@ export const Container = styled.View`
   padding: 0 ${({ theme }) => theme.sizes.spaces.x4}px;
 `;
 
-export const ButtonView = styled.TouchableOpacity`
+export const ButtonView = styled.TouchableOpacity.attrs({ elevation: 9 })`
   width: 85%;
   height: 40px;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: ${({ theme }) => theme.sizes.radius.x10}px;
   box-shadow: 0px 7px 5px rgba(194, 193, 248, 0.3);
-  elevation: 9;
   justify-content: center;
   align-items: center;
   margin: ${({ theme }) => theme.sizes.spaces.x2}px 0;

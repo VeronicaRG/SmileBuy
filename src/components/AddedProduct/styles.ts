@@ -10,17 +10,18 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const ImageProduct = styled.Image`
+export const ImageProduct = styled.Image.attrs({ elevation: 9 })`
   width: 38px;
   height: 50px;
   box-shadow: 0px 7px 5px rgba(194, 193, 248, 0.3);
-  elevation: 9;
   border-radius: ${({ theme }) => theme.sizes.radius.x2}px;
 `;
+
 export const Info = styled.View`
   width: 60%;
   margin: ${({ theme }) => theme.sizes.spaces.x2}px;
 `;
+
 export const Price = styled.View`
   flex-direction: row;
   align-items: flex-end;

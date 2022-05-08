@@ -7,4 +7,7 @@ export interface HomeProps {
   categoriesList: Category[];
   quantity: number;
   goCart?: () => {};
+  onPressCategory: (category: string) => void;
+  selectedCategoryIndex: number;
+  productsByCategory: Product[];
 }
