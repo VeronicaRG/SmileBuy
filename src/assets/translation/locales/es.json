@@ -15,7 +15,13 @@
       "AddItem": "ADICIONAR PRODUCTOS",
       "EmptyCart": "NI UN PRODUCTO ADDICIONADO EN EL CARRITO",
       "Total": "Total",
-      "Finish": "FINALIZAR COMPRA"
+      "Finish": "FINALIZAR COMPRA",
+      "Modal": {
+        "Title": "Remover el artículo",
+        "Subtitle": "Si desea eliminar el artículo del carrito, haga clic en\n\ncontinuar.",
+        "Confirm": "CONTINUAR",
+        "Cancel": "CANCELAR"
+      }
     },
     "SaleSuccessful": {
       "Continue": "CONTINUAR",

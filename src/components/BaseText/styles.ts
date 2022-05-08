@@ -14,6 +14,7 @@ const fontStyles: { [index: string]: { size: number; font: string } } = {
   h10: { size: sizes.fontSizes.h10, font: fonts.bold },
   h6: { size: sizes.fontSizes.h6, font: fonts.bold },
   b8: { size: sizes.fontSizes.b8, font: fonts.bold },
+  bn: { size: sizes.fontSizes.bn, font: fonts.bold },
   b10: { size: sizes.fontSizes.b10, font: fonts.medium },
   b14: { size: sizes.fontSizes.b10, font: fonts.medium },
 };

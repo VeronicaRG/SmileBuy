@@ -39,6 +39,7 @@ export const sizes = {
     h6: 14,
     h10: 12,
     b8: 8,
+    bn: 10,
     b10: 10,
     b14: 14,
   },

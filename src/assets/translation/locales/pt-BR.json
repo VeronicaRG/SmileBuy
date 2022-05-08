@@ -15,12 +15,24 @@
       "AddItem": "ADICIONAR ITEMS",
       "EmptyCart": "NENHUM ITEM ADICIONADO NO CARRINHO",
       "Total": "Total",
-      "Finish": "FINALIZAR COMPRA"
+      "Finish": "FINALIZAR COMPRA",
+      "Modal": {
+        "Title": "Remover Item",
+        "Subtitle": "Se deseja remover o item do carrinho clique em\nprosseguir.",
+        "Confirm": "PROSSEGUIR",
+        "Cancel": "CANCELAR"
+      }
     },
     "SaleSuccessful": {
       "Continue": "PROSSEGUIR",
       "Successful": "SUCESSO!",
       "Description": "Compra realizada com sucesso, aproveite!"
+    },
+    "Modal": {
+      "Title": "Finalizar a compra",
+      "Subtitle": "Se deseja finalizar a compra clique em\nprosseguir.",
+      "Confirm": "PROSSEGUIR",
+      "Cancel": "CANCELAR"
     }
   }
 }

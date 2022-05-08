@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import BaseText from '@components/BaseText';
 
@@ -8,9 +8,10 @@ import AddIcon from '@src/assets/svgs/add.svg';
 import ReducerIcon from '@src/assets/svgs/reducer.svg';
 import { useAppDispatch } from '@src/redux/hooks';
 import { addProductToCart, reduceProduct } from '@src/redux/reducers/cart';
+import { hideDialog, showDialog } from '@src/redux/reducers/dialog';
 import { theme } from '@src/theme';
+import { formatToCurrency } from '@src/utils/number';
 
-import { formatToCurrency } from '../../utils/number';
 import {
   Add,
   Container,
@@ -24,19 +25,29 @@ import { AddedProductProps } from './types';
 
 const AddedProduct: React.FC<AddedProductProps> = props => {
   const { image, title, totalAmount, quantity } = props;
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const alertDeleteProduct = () =>
-    Alert.alert('si', 'e', [
-      {
-        text: 'No delete',
-        style: 'cancel',
-      },
-      {
-        text: 'Delete',
-        onPress: () => dispatch(reduceProduct(props)),
-      },
-    ]);
+  const openModalDeleteProduct = () => {
+    dispatch(
+      showDialog({
+        title: t('Cart.Modal.Title'),
+        subtitle: t('Cart.Modal.Subtitle'),
+        confirm: {
+          message: t('Cart.Modal.Confirm'),
+          action: () => {
+            dispatch(reduceProduct(props));
+          },
+        },
+        cancel: {
+          message: t('Cart.Modal.Cancel'),
+          action: () => {
+            dispatch(hideDialog());
+          },
+        },
+      }),
+    );
+  };
 
   const handleAddToCart = () => {
     dispatch(addProductToCart(props));
@@ -66,7 +77,7 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
 
       <Modify>
         <Reducer
-          onPress={quantity > 1 ? handlDeleteProduct : alertDeleteProduct}>
+          onPress={quantity > 1 ? handlDeleteProduct : openModalDeleteProduct}>
           <ReducerIcon color={theme.colors.neutral._25} width={16} height={6} />
         </Reducer>
         <Add onPress={handleAddToCart}>

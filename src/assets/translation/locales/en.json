@@ -15,7 +15,13 @@
       "Cart": "CART",
       "MyCart": "My cart",
       "Total": "Total",
-      "Finish": "FINALIZE PURCHASE"
+      "Finish": "FINALIZE PURCHASE",
+      "Modal": {
+        "Title": "Remove Item",
+        "Subtitle": "If you want to remove the item from the cart click on\n\ncontinue.",
+        "Confirm": "CONTINUE",
+        "Cancel": "CANCEL"
+      }
     },
     "SaleSuccessful": {
       "Continue": "CONTINUE",

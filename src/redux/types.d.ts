@@ -20,3 +20,18 @@ export type CartStore = {
   quantity: number;
   totalAmount: number;
 };
+
+export type DialogStore = {
+  content?: {
+    title: string;
+    subtitle: string;
+    confirm: {
+      message: string;
+      action: () => void;
+    };
+    cancel: {
+      message: string;
+      action: () => void;
+    };
+  };
+};

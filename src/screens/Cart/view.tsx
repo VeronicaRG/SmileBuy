@@ -12,6 +12,7 @@ import Button from '@components/Button';
 import Arrow from '@src/assets/svgs/arrow.svg';
 import Logo from '@src/assets/svgs/logo.svg';
 import { buyIt } from '@src/redux/reducers/cart';
+import { hideDialog, showDialog } from '@src/redux/reducers/dialog';
 import { ItemCart } from '@src/redux/types';
 import { theme } from '@src/theme';
 import { formatToCurrency } from '@src/utils/number';
@@ -36,9 +37,26 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
-  const continueShopping = () => {
-    dispatch(buyIt());
-    navigation.navigate('SaleSuccessful');
+  const openModalFinalizePurchase = () => {
+    dispatch(
+      showDialog({
+        title: t('Modal.Title'),
+        subtitle: t('Modal.Subtitle'),
+        confirm: {
+          message: t('Modal.Confirm'),
+          action: () => {
+            navigation.navigate('SaleSuccessful');
+            dispatch(buyIt());
+          },
+        },
+        cancel: {
+          message: t('Modal.Cancel'),
+          action: () => {
+            dispatch(hideDialog());
+          },
+        },
+      }),
+    );
   };
 
   return (
@@ -90,7 +108,6 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
           />
         )}
       />
-
       {!!totalAmount && (
         <ViewTotal safeArea={insets}>
           <Total>
@@ -101,7 +118,10 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
               {formatToCurrency(totalAmount)}
             </BaseText>
           </Total>
-          <Button onPress={continueShopping} title={t('Cart.Finish')} />
+          <Button
+            onPress={openModalFinalizePurchase}
+            title={t('Cart.Finish')}
+          />
         </ViewTotal>
       )}
     </FullContainer>
