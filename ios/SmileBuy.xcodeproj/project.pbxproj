@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-SmileBuy-SmileBuyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmileBuy-SmileBuyTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		95D92A4228275CD70029E94B /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D92A4128275CD70029E94B /* BootSplash.storyboard */; };
 		9F39208F67B64144B5D8ED0A /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59632B8B4B5B4640A4038727 /* WorkSans-Bold.ttf */; };
 		D7735D60FDE74BF9A031B041 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F2DB2705F84115A1FCA24D /* WorkSans-Medium.ttf */; };
 		F6F0366B289E43EDA1D4DAA8 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 652D323E82B24D98BBA4B12F /* WorkSans-SemiBold.ttf */; };
@@ -42,13 +43,14 @@
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmileBuy-SmileBuyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileBuy-SmileBuyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-SmileBuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileBuy.debug.xcconfig"; path = "Target Support Files/Pods-SmileBuy/Pods-SmileBuy.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SmileBuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileBuy.release.xcconfig"; path = "Target Support Files/Pods-SmileBuy/Pods-SmileBuy.release.xcconfig"; sourceTree = "<group>"; };
-		59632B8B4B5B4640A4038727 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Bold.ttf"; path = "../src/assets/fonts/WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		59632B8B4B5B4640A4038727 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Bold.ttf"; path = "../src/assets/fonts/WorkSans-Bold.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SmileBuy-SmileBuyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileBuy-SmileBuyTests.debug.xcconfig"; path = "Target Support Files/Pods-SmileBuy-SmileBuyTests/Pods-SmileBuy-SmileBuyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SmileBuy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileBuy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		652D323E82B24D98BBA4B12F /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-SemiBold.ttf"; path = "../src/assets/fonts/WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		652D323E82B24D98BBA4B12F /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-SemiBold.ttf"; path = "../src/assets/fonts/WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmileBuy/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SmileBuy-SmileBuyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileBuy-SmileBuyTests.release.xcconfig"; path = "Target Support Files/Pods-SmileBuy-SmileBuyTests/Pods-SmileBuy-SmileBuyTests.release.xcconfig"; sourceTree = "<group>"; };
-		A6F2DB2705F84115A1FCA24D /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Medium.ttf"; path = "../src/assets/fonts/WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		95D92A4128275CD70029E94B /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = SmileBuy/BootSplash.storyboard; sourceTree = "<group>"; };
+		A6F2DB2705F84115A1FCA24D /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Medium.ttf"; path = "../src/assets/fonts/WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				95D92A4128275CD70029E94B /* BootSplash.storyboard */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -163,7 +166,6 @@
 				652D323E82B24D98BBA4B12F /* WorkSans-SemiBold.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +265,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				9F39208F67B64144B5D8ED0A /* WorkSans-Bold.ttf in Resources */,
+				95D92A4228275CD70029E94B /* BootSplash.storyboard in Resources */,
 				D7735D60FDE74BF9A031B041 /* WorkSans-Medium.ttf in Resources */,
 				F6F0366B289E43EDA1D4DAA8 /* WorkSans-SemiBold.ttf in Resources */,
 			);

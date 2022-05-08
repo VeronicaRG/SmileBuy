@@ -5,6 +5,7 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RNBootSplash from 'react-native-bootsplash';
 
 import Cart from '@src/screens/Cart';
 import Home from '@src/screens/Home';
@@ -18,7 +19,9 @@ const Routes: React.FC = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer
+      onReady={() => RNBootSplash.hide({ fade: true })}
+      ref={navigationRef}>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"

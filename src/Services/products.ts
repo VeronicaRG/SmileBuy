@@ -9,7 +9,6 @@ export async function getNewProducts(): Promise<Product[]> {
 }
 export async function getProducts(): Promise<Product[]> {
   const response = await api.get('/products');
-  console.log(response.data);
   return response.data;
 }
 export async function getCategories(): Promise<Category[]> {
