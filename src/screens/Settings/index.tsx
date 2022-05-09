@@ -1,26 +1,17 @@
 import React from 'react';
 
 import { useNavigation } from '@react-navigation/native';
-import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
 import { setUserLogout } from '@src/redux/reducers/user';
+import { changeCurrentLanguage } from '@src/utils/language';
 
 import SettingsView from './view';
 
 const Settings: React.FC = () => {
-  const { i18n } = useTranslation();
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
-  function changeCurrentLanguage() {
-    if (i18n.language === 'en') {
-      return i18n.changeLanguage('es');
-    } else if (i18n.language === 'es') {
-      return i18n.changeLanguage('pt-BR');
-    }
-    return i18n.changeLanguage('en');
-  }
   return (
     <SettingsView
       goback={navigation.goBack}

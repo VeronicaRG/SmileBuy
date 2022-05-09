@@ -8,6 +8,7 @@ import * as yup from 'yup';
 
 import { useAppSelector } from '@src/redux/hooks';
 import { setUser } from '@src/redux/reducers/user';
+import { changeCurrentLanguage } from '@src/utils/language';
 
 import LoginView from './view';
 
@@ -17,16 +18,7 @@ const Login: React.FC = () => {
   const { user } = useAppSelector(state => state.user);
   const dispatch = useDispatch();
   const navigation = useNavigation();
-  const { i18n, t } = useTranslation();
-
-  function changeCurrentLanguage() {
-    if (i18n.language === 'en') {
-      return i18n.changeLanguage('es');
-    } else if (i18n.language === 'es') {
-      return i18n.changeLanguage('pt-BR');
-    }
-    return i18n.changeLanguage('en');
-  }
+  const { t } = useTranslation();
 
   async function setLogin() {
     try {
@@ -66,9 +58,7 @@ const Login: React.FC = () => {
 
   return (
     <LoginView
-      changeLanguage={() => {
-        changeCurrentLanguage();
-      }}
+      changeLanguage={changeCurrentLanguage}
       valueNickname={nickname}
       onChangeTextNickname={text => setNickname(text)}
       onPress={setLogin}
