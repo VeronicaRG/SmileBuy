@@ -27,13 +27,13 @@ const SaleSuccessfulView: React.FC<SaleSuccessfulProps> = () => {
       </CheckView>
       <BaseText
         margin={{ top: 'x8' }}
-        color={colors.fixNeutral.white}
+        color={colors.fixedNeutral.white}
         size="h3">
         {t('SaleSuccessful.Successful')}
       </BaseText>
       <BaseText
         margin={{ top: 'x2' }}
-        color={colors.fixNeutral.white}
+        color={colors.fixedNeutral.white}
         size="b14">
         {t('SaleSuccessful.Description')}
       </BaseText>

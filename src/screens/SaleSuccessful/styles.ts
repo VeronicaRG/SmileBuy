@@ -16,7 +16,7 @@ export const CheckView = styled.View`
   height: 160px;
   justify-content: center;
   align-items: center;
-  border: 5px solid ${({ theme }) => theme.colors.fixNeutral.white};
+  border: 5px solid ${({ theme }) => theme.colors.fixedNeutral.white};
   border-radius: ${({ theme }) => theme.sizes.radius.x30}px;
 `;
 

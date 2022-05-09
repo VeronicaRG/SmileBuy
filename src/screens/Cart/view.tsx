@@ -102,7 +102,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
               {t('Cart.EmptyCart')}
             </BaseText>
             <ButtonView onPress={navigation.goBack}>
-              <BaseText size="h6" color={colors.fixNeutral.white}>
+              <BaseText size="h6" color={colors.fixedNeutral.white}>
                 {t('Cart.AddItem')}
               </BaseText>
             </ButtonView>

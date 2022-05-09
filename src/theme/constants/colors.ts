@@ -14,7 +14,7 @@ export const colors = {
       _55: '#848484',
       _99: '#000000',
     },
-    fixNeutral: {
+    fixedNeutral: {
       white: '#FFFF',
       black: '#000000',
       grey: '#6F6F6F',
@@ -45,7 +45,7 @@ export const colors = {
       _55: '#F8F8F8',
       _99: '#FFFF',
     },
-    fixNeutral: {
+    fixedNeutral: {
       white: '#FFFF',
       black: '#000000',
       grey: '#6F6F6F',

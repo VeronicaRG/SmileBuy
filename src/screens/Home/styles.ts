@@ -30,7 +30,7 @@ export const CarAmount = styled.View`
   justify-content: center;
   align-items: center;
   border: 0.5px solid ${({ theme }) => theme.colors.neutral._25};
-  background-color: ${({ theme }) => theme.colors.fixNeutral.white};
+  background-color: ${({ theme }) => theme.colors.fixedNeutral.white};
   border-radius: ${({ theme }) => theme.sizes.radius.x2}px;
 `;
 
@@ -47,7 +47,7 @@ export const ButtonView = styled.View.attrs({ elevation: 9 })<{
   position: absolute;
   bottom: 0;
   box-shadow: 10px 10px 10px rgba(000, 000, 000, 0.3);
-  background-color: ${({ theme }) => theme.colors.fixNeutral.white};
+  background-color: ${({ theme }) => theme.colors.fixedNeutral.white};
   width: 100%;
   border-top-right-radius: ${({ theme }) => theme.sizes.radius.x6}px;
   border-top-left-radius: ${({ theme }) => theme.sizes.radius.x6}px;

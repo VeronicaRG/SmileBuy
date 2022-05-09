@@ -54,15 +54,15 @@ const SettingsView: React.FC<SettingsProps> = ({
       </GreetingView>
       <Space flex={1} />
       <Option onPress={changeLanguage}>
-        <BaseText size="h6" color={colors.fixNeutral.white}>
+        <BaseText size="h6" color={colors.fixedNeutral.white}>
           {t('Settings.Language')}
         </BaseText>
-        <BaseText size="b10" color={colors.fixNeutral.white}>
+        <BaseText size="b10" color={colors.fixedNeutral.white}>
           {t('Settings.ChangeLanguage')}
         </BaseText>
       </Option>
       <Option onPress={Logout}>
-        <BaseText size="h6" color={colors.fixNeutral.white}>
+        <BaseText size="h6" color={colors.fixedNeutral.white}>
           {t('Settings.Logout')}
         </BaseText>
       </Option>

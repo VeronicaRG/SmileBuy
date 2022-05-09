@@ -63,7 +63,7 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
       <ImageProduct source={{ uri: image }} />
 
       <Info>
-        <BaseText color={colors.fixNeutral.black} numberOfLines={1} size="h6">
+        <BaseText color={colors.fixedNeutral.black} numberOfLines={1} size="h6">
           {title.split(' ').slice(0, 3).join(' ')}
         </BaseText>
         <Price>

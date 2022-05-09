@@ -32,13 +32,13 @@ const LoginView: React.FC<LoginProps> = ({
     <Container safeArea={insets}>
       <ViewButtonChangeLanguage>
         <ChangeLanguage onPress={changeLanguage}>
-          <BaseText align="center" color={colors.fixNeutral.white} size="bn">
+          <BaseText align="center" color={colors.fixedNeutral.white} size="bn">
             {t('Language')}
           </BaseText>
         </ChangeLanguage>
       </ViewButtonChangeLanguage>
       <Space flex={2} />
-      <Logo color={colors.fixNeutral.white} width={106} height={127} />
+      <Logo color={colors.fixedNeutral.white} width={106} height={127} />
       <Input
         value={valueNickname}
         onChangeText={onChangeTextNickname}

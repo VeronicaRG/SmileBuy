@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
   const { colors } = useTheme();
   return (
     <Container onPress={onPress}>
-      <BaseText size="h6" color={colors.fixNeutral.white}>
+      <BaseText size="h6" color={colors.fixedNeutral.white}>
         {title}
       </BaseText>
     </Container>

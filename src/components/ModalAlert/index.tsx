@@ -44,7 +44,7 @@ const ModalAlert: React.FC = () => {
             margin={{ top: 'x6' }}
             align="center"
             size="h6"
-            color={colors.fixNeutral.grey}>
+            color={colors.fixedNeutral.grey}>
             {title}
           </BaseText>
 

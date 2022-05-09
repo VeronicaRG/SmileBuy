@@ -12,7 +12,7 @@ const Category: React.FC<CategoryProps> = ({ active, category, onPress }) => {
   return (
     <Container onPress={onPress} active={active}>
       {active ? (
-        <BaseText align="center" size="b8" color={colors.fixNeutral.white}>
+        <BaseText align="center" size="b8" color={colors.fixedNeutral.white}>
           {category}
         </BaseText>
       ) : (

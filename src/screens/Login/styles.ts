@@ -21,16 +21,16 @@ export const ChangeLanguage = styled.TouchableOpacity`
   border-radius: ${({ theme }) => theme.sizes.radius.x6}px;
   justify-content: center;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.colors.fixNeutral.white};
+  border: 1px solid ${({ theme }) => theme.colors.fixedNeutral.white};
   align-self: flex-end;
 `;
 
 export const Input = styled.TextInput.attrs(({ theme }) => {
-  return { placeholderTextColor: theme.colors.fixNeutral.grey };
+  return { placeholderTextColor: theme.colors.fixedNeutral.grey };
 })`
   border-radius: ${({ theme }) => theme.sizes.radius.x4}px;
   font-family: ${({ theme }) => theme.fonts.semiBold};
-  background-color: ${({ theme }) => theme.colors.fixNeutral.white};
+  background-color: ${({ theme }) => theme.colors.fixedNeutral.white};
   padding: ${({ theme }) => theme.sizes.spaces.x2}px;
   width: 80%;
   height: 50px;
