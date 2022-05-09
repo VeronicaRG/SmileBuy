@@ -7,9 +7,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
 import { useTheme } from 'styled-components';
 
-import AddedProduct from '@components/AddedProduct';
 import BaseText from '@components/BaseText';
 import Button from '@components/Button';
+import ProductOnCart from '@components/ProductOnCart';
 
 import Arrow from '@src/assets/svgs/arrow.svg';
 import Logo from '@src/assets/svgs/logo.svg';
@@ -112,7 +112,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={ListEmptyComponent}
         renderItem={({ item }: { item: ItemCart }) => (
-          <AddedProduct
+          <ProductOnCart
             product={item.product}
             quantity={item.quantity}
             totalAmount={item.totalAmount}

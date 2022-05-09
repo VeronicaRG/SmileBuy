@@ -23,7 +23,7 @@ import {
 } from './styles';
 import { AddedProductProps } from './types';
 
-const AddedProduct: React.FC<AddedProductProps> = props => {
+const ProductOnCart: React.FC<AddedProductProps> = props => {
   const { image, title, totalAmount, quantity } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -50,11 +50,11 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
     );
   };
 
-  const handleAddToCart = () => {
+  const handleIncrease = () => {
     dispatch(addProductToCart(props));
   };
 
-  const handlDeleteProduct = () => {
+  const handleDecrease = () => {
     dispatch(reduceProduct(props));
   };
 
@@ -78,10 +78,10 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
 
       <Modify>
         <Reducer
-          onPress={quantity > 1 ? handlDeleteProduct : openModalDeleteProduct}>
+          onPress={quantity > 1 ? handleDecrease : openModalDeleteProduct}>
           <ReducerIcon color={colors.neutral._25} width={16} height={6} />
         </Reducer>
-        <Add onPress={handleAddToCart}>
+        <Add onPress={handleIncrease}>
           <AddIcon color={colors.neutral._25} width={16} height={6} />
         </Add>
       </Modify>
@@ -89,4 +89,4 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
   );
 };
 
-export default AddedProduct;
+export default ProductOnCart;
