@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
+import { useTheme } from 'styled-components';
 
 import AddedProduct from '@components/AddedProduct';
 import BaseText from '@components/BaseText';
@@ -14,7 +15,6 @@ import Logo from '@src/assets/svgs/logo.svg';
 import { buyIt } from '@src/redux/reducers/cart';
 import { hideDialog, showDialog } from '@src/redux/reducers/dialog';
 import { ItemCart } from '@src/redux/types';
-import { theme } from '@src/theme';
 import { formatToCurrency } from '@src/utils/number';
 
 import {
@@ -36,6 +36,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const { colors } = useTheme();
 
   const openModalFinalizePurchase = () => {
     dispatch(
@@ -64,16 +65,16 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
       <Header>
         <Row>
           <ArrowView onPress={() => navigation.goBack()}>
-            <Arrow color={theme.colors.neutral._55} width={10} height={10} />
+            <Arrow color={colors.neutral._55} width={10} height={10} />
           </ArrowView>
-          <PageTitle size="h10" color={theme.colors.neutral._55}>
+          <PageTitle size="h10" color={colors.neutral._55}>
             {t('Cart.Cart')}
           </PageTitle>
         </Row>
         <BaseText
           size="h2"
           margin={{ horizontal: 'x4' }}
-          color={theme.colors.neutral._99}>
+          color={colors.neutral._99}>
           {t('Cart.MyCart')}
         </BaseText>
       </Header>
@@ -84,16 +85,16 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (
           <EmptyCartView>
-            <Logo color={theme.colors.neutral._25} width={50} height={70} />
+            <Logo color={colors.neutral._25} width={50} height={70} />
             <BaseText
               align="center"
               size="h6"
               margin={{ horizontal: 'x20' }}
-              color={theme.colors.neutral._45}>
+              color={colors.neutral._45}>
               {t('Cart.EmptyCart')}
             </BaseText>
             <ButtonView onPress={navigation.goBack}>
-              <BaseText size="h6" color={theme.colors.neutral._00}>
+              <BaseText size="h6" color={colors.fixNeutral.white}>
                 {t('Cart.AddItem')}
               </BaseText>
             </ButtonView>
@@ -111,10 +112,10 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
       {!!totalAmount && (
         <ViewTotal safeArea={insets}>
           <Total>
-            <BaseText size="h6" color={theme.colors.neutral._99}>
+            <BaseText size="h6" color={colors.neutral._99}>
               {`${t('Cart.Total')}:`}
             </BaseText>
-            <BaseText size="h6" color={theme.colors.neutral._99}>
+            <BaseText size="h6" color={colors.neutral._99}>
               {formatToCurrency(totalAmount)}
             </BaseText>
           </Total>

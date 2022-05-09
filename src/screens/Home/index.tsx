@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { useAppSelector } from '@src/redux/hooks';
 import {
   getCategories,
   getNewProducts,
@@ -10,7 +11,6 @@ import {
 import { Category } from '@ts/app/Category';
 import { Product } from '@ts/app/Product';
 
-import { useAppSelector } from '../../redux/hooks';
 import HomeView from './view';
 
 const Home: React.FC = () => {
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   }
   async function categories() {
     const list = await getCategories();
-    setCategoriesList(['all', ...list]);
+    setCategoriesList(['Últimos', ...list]);
   }
   async function onPressCategory(category: string) {
     setSelectedCategoryIndex(

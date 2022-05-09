@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Modal } from 'react-native';
 import { useDispatch } from 'react-redux';
+import { useTheme } from 'styled-components';
 
 import BaseText from '@components/BaseText';
 
 import { useAppSelector } from '@src/redux/hooks';
 import { hideDialog } from '@src/redux/reducers/dialog';
-import { theme } from '@src/theme';
 
 import { Next, Cancel, Container, Content } from './styles';
 
@@ -16,6 +16,7 @@ const ModalAlert: React.FC = () => {
   const modalVisible = !!content;
   const { title, subtitle, confirm, cancel } = content || {};
   const dispatch = useDispatch();
+  const { colors } = useTheme();
 
   const closeModal = () => {
     dispatch(hideDialog());
@@ -43,7 +44,7 @@ const ModalAlert: React.FC = () => {
             margin={{ top: 'x6' }}
             align="center"
             size="h6"
-            color={theme.colors.neutral._50}>
+            color={colors.fixNeutral.grey}>
             {title}
           </BaseText>
 
@@ -51,16 +52,16 @@ const ModalAlert: React.FC = () => {
             margin={{ all: 'x2' }}
             align="center"
             size="b10"
-            color={theme.colors.neutral._40}>
+            color={colors.neutral._40}>
             {subtitle}
           </BaseText>
           <Next onPress={handleConfirm}>
-            <BaseText size="bn" color={theme.colors.feedback.positive}>
+            <BaseText size="bn" color={colors.feedback.positive}>
               {confirm?.message}
             </BaseText>
           </Next>
           <Cancel onPress={handleCancel}>
-            <BaseText size="bn" color={theme.colors.feedback.negative}>
+            <BaseText size="bn" color={colors.feedback.negative}>
               {cancel?.message}
             </BaseText>
           </Cancel>

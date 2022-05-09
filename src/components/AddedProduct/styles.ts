@@ -40,7 +40,7 @@ export const Reducer = styled.TouchableOpacity`
   border: 1px solid ${({ theme }) => theme.colors.neutral._25};
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.colors.neutral._00};
+  background: ${({ theme }) => theme.colors.fixNeutral.white};
 `;
 
 export const Add = styled.TouchableOpacity`
@@ -51,5 +51,5 @@ export const Add = styled.TouchableOpacity`
   border: 1px solid ${({ theme }) => theme.colors.neutral._25};
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.colors.neutral._00};
+  background: ${({ theme }) => theme.colors.fixNeutral.white};
 `;

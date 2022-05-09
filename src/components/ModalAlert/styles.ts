@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const Content = styled.View`
   width: 290px;
   height: 166px;
-  background: ${({ theme }) => theme.colors.neutral._00};
+  background: ${({ theme }) => theme.colors.fixNeutral.white};
   border-radius: ${({ theme }) => theme.sizes.radius.x2}px;
   justify-content: center;
 `;

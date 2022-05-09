@@ -6,7 +6,7 @@ import BaseText from '@components/BaseText';
 export const FullContainer = styled.View<{ safeArea: EdgeInsets }>`
   flex: 1;
   padding-top: ${({ safeArea }) => safeArea?.top || 10}px;
-  background-color: ${({ theme }) => theme.colors.neutral._05};
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Container = styled.View`
@@ -49,7 +49,7 @@ export const EmptyCartView = styled.View`
 `;
 
 export const ViewTotal = styled.View<{ safeArea: EdgeInsets }>`
-  background: ${({ theme }) => theme.colors.neutral._05};
+  background: ${({ theme }) => theme.colors.background};
   padding-bottom: ${({ safeArea }) => safeArea.bottom}px;
 `;
 

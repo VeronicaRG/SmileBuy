@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useTheme } from 'styled-components';
 
 import BaseText from '@components/BaseText';
 
@@ -9,7 +10,6 @@ import ReducerIcon from '@src/assets/svgs/reducer.svg';
 import { useAppDispatch } from '@src/redux/hooks';
 import { addProductToCart, reduceProduct } from '@src/redux/reducers/cart';
 import { hideDialog, showDialog } from '@src/redux/reducers/dialog';
-import { theme } from '@src/theme';
 import { formatToCurrency } from '@src/utils/number';
 
 import {
@@ -27,6 +27,7 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
   const { image, title, totalAmount, quantity } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const { colors } = useTheme();
 
   const openModalDeleteProduct = () => {
     dispatch(
@@ -62,14 +63,14 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
       <ImageProduct source={{ uri: image }} />
 
       <Info>
-        <BaseText numberOfLines={1} size="h6">
+        <BaseText color={colors.fixNeutral.black} numberOfLines={1} size="h6">
           {title.split(' ').slice(0, 3).join(' ')}
         </BaseText>
         <Price>
-          <BaseText size="h10" color={theme.colors.primary}>
+          <BaseText size="h10" color={colors.primary}>
             {`${quantity}x `}
           </BaseText>
-          <BaseText size="h6" color={theme.colors.primary}>
+          <BaseText size="h6" color={colors.primary}>
             {`${formatToCurrency(totalAmount)}`}
           </BaseText>
         </Price>
@@ -78,10 +79,10 @@ const AddedProduct: React.FC<AddedProductProps> = props => {
       <Modify>
         <Reducer
           onPress={quantity > 1 ? handlDeleteProduct : openModalDeleteProduct}>
-          <ReducerIcon color={theme.colors.neutral._25} width={16} height={6} />
+          <ReducerIcon color={colors.neutral._25} width={16} height={6} />
         </Reducer>
         <Add onPress={handleAddToCart}>
-          <AddIcon color={theme.colors.neutral._25} width={16} height={6} />
+          <AddIcon color={colors.neutral._25} width={16} height={6} />
         </Add>
       </Modify>
     </Container>

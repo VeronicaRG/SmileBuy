@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View<{ safeArea: EdgeInsets }>`
   flex: 1;
   padding-top: ${({ safeArea }) => safeArea?.top || 10}px;
-  background-color: ${({ theme }) => theme.colors.neutral._05};
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Header = styled.View`
@@ -30,7 +30,7 @@ export const CarAmount = styled.View`
   justify-content: center;
   align-items: center;
   border: 0.5px solid ${({ theme }) => theme.colors.neutral._25};
-  background-color: ${({ theme }) => theme.colors.neutral._00};
+  background-color: ${({ theme }) => theme.colors.fixNeutral.white};
   border-radius: ${({ theme }) => theme.sizes.radius.x2}px;
 `;
 
@@ -47,7 +47,7 @@ export const ButtonView = styled.View.attrs({ elevation: 9 })<{
   position: absolute;
   bottom: 0;
   box-shadow: 10px 10px 10px rgba(000, 000, 000, 0.3);
-  background-color: ${({ theme }) => theme.colors.neutral._00};
+  background-color: ${({ theme }) => theme.colors.fixNeutral.white};
   width: 100%;
   border-top-right-radius: ${({ theme }) => theme.sizes.radius.x6}px;
   border-top-left-radius: ${({ theme }) => theme.sizes.radius.x6}px;

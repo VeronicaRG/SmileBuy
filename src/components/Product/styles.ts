@@ -43,5 +43,5 @@ export const Add = styled.TouchableOpacity<ProductBigProps>`
   top: ${({ isBig }) => (isBig === true ? 90 : 55)}%;
   bottom: 0;
   margin: 0 ${({ theme }) => theme.sizes.spaces.x1}px;
-  background: ${({ theme }) => theme.colors.neutral._00};
+  background: ${({ theme }) => theme.colors.fixNeutral.white};
 `;

@@ -5,7 +5,9 @@ import { CategoryContainersProps } from './types';
 export const Container = styled.TouchableOpacity<CategoryContainersProps>`
   height: 21px;
   background-color: ${({ active, theme }) =>
-    active === true ? theme.colors.primary : 'transparent'};
+    active === true
+      ? theme.colors.categoryButton.active
+      : theme.colors.categoryButton.inactive};
   margin-right: ${({ theme }) => theme.sizes.spaces.x1}px;
   border-radius: ${({ theme }) => theme.sizes.radius.x2}px;
   justify-content: center;

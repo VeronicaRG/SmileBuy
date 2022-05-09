@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { FlatList } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTheme } from 'styled-components';
 
 import BaseText from '@components/BaseText';
 import Button from '@components/Button';
@@ -11,7 +12,6 @@ import Category from '@components/Category';
 import Product from '@components/Product';
 
 import Car from '@src/assets/svgs/logo.svg';
-import { theme } from '@src/theme';
 
 import {
   ButtonView,
@@ -35,6 +35,7 @@ const HomeView: React.FC<HomeProps> = ({
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
+  const { colors, sizes } = useTheme();
 
   return (
     <Container safeArea={insets}>
@@ -48,12 +49,14 @@ const HomeView: React.FC<HomeProps> = ({
         ListHeaderComponent={() => (
           <>
             <Header>
-              <BaseText size="h4">{t('Home.Products')}</BaseText>
+              <BaseText color={colors.neutral._99} size="h4">
+                {t('Home.Products')}
+              </BaseText>
               <CarView onPress={() => navigation.navigate('Cart')}>
-                <Car color={theme.colors.primary} width={18} height={20} />
+                <Car color={colors.logo} width={18} height={20} />
                 {!!quantity && (
                   <CarAmount>
-                    <BaseText size="b8" color={theme.colors.primary}>
+                    <BaseText size="b8" color={colors.primary}>
                       {quantity}
                     </BaseText>
                   </CarAmount>
@@ -62,16 +65,16 @@ const HomeView: React.FC<HomeProps> = ({
             </Header>
             <BaseText
               style={{
-                paddingLeft: theme.sizes.spaces.x4,
-                marginTop: theme.sizes.spaces.x4,
-                marginBottom: theme.sizes.spaces.x1,
+                paddingLeft: sizes.spaces.x4,
+                marginTop: sizes.spaces.x4,
+                marginBottom: sizes.spaces.x1,
               }}
               size="b8"
-              color={theme.colors.neutral._50}>
+              color={colors.neutral._50}>
               {t('Home.Filter')}
             </BaseText>
             <FlatList
-              style={{ paddingLeft: theme.sizes.spaces.x4 }}
+              style={{ paddingLeft: sizes.spaces.x4 }}
               data={categoriesList}
               keyExtractor={item => item}
               horizontal={true}
@@ -86,7 +89,8 @@ const HomeView: React.FC<HomeProps> = ({
             {!selectedCategoryIndex && (
               <ProductsView>
                 <BaseText
-                  style={{ paddingLeft: theme.sizes.spaces.x4 }}
+                  color={colors.neutral._99}
+                  style={{ paddingLeft: sizes.spaces.x4 }}
                   size="h2">
                   {t('Home.News')}
                 </BaseText>
@@ -101,6 +105,7 @@ const HomeView: React.FC<HomeProps> = ({
               </ProductsView>
             )}
             <BaseText
+              color={colors.neutral._99}
               margin={{
                 left: 'x4',
                 top: selectedCategoryIndex ? 'x4' : undefined,
