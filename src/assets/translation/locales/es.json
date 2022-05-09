@@ -42,6 +42,13 @@
     },
     "General": {
       "error": "Algo salio mal, intente nuevamente más tarde"
+    },
+    "Settings": {
+      "Logout": "Salir",
+      "Language": "Español-CO 🇨🇴",
+      "ChangeLanguage": "Presione para cambiar",
+      "Hello": "Hola",
+      "Header": "AJUSTES"
     }
   }
 }

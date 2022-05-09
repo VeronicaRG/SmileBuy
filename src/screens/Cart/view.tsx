@@ -12,6 +12,7 @@ import Button from '@components/Button';
 
 import Arrow from '@src/assets/svgs/arrow.svg';
 import Logo from '@src/assets/svgs/logo.svg';
+import SettingsIcon from '@src/assets/svgs/settings.svg';
 import { buyIt } from '@src/redux/reducers/cart';
 import { hideDialog, showDialog } from '@src/redux/reducers/dialog';
 import { ItemCart } from '@src/redux/types';
@@ -28,6 +29,7 @@ import {
   FlatList,
   Row,
   PageTitle,
+  Settings,
 } from './styles';
 import { CartProps } from './types';
 
@@ -70,6 +72,12 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
           <PageTitle size="h10" color={colors.neutral._55}>
             {t('Cart.Cart')}
           </PageTitle>
+          <Settings
+            onPress={() => {
+              navigation.navigate('Settings');
+            }}>
+            <SettingsIcon color={colors.neutral._55} width={20} height={20} />
+          </Settings>
         </Row>
         <BaseText
           size="h2"

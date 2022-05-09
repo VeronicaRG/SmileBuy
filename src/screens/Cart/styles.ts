@@ -33,6 +33,7 @@ export const Header = styled.View`
 export const Row = styled.View`
   flex-direction: row;
   align-items: center;
+  padding-right: ${({ theme }) => theme.sizes.spaces.x2}px;
 `;
 
 export const ArrowView = styled.TouchableOpacity`
@@ -77,4 +78,11 @@ export const FlatList = styled.FlatList.attrs(({ theme }) => ({
   },
 }))`
   flex: 1;
+`;
+
+export const Settings = styled.TouchableOpacity`
+  width: 30px;
+  height: 30px;
+  border-radius: ${({ theme }) => theme.sizes.radius.x6}px;
+  align-items: center;
 `;

@@ -11,6 +11,7 @@ import Cart from '@src/screens/Cart';
 import Home from '@src/screens/Home';
 import Login from '@src/screens/Login';
 import SaleSuccessful from '@src/screens/SaleSuccessful';
+import Settings from '@src/screens/Settings';
 
 import { RootStackParamList } from './types';
 
@@ -37,6 +38,11 @@ const Routes: React.FC = () => {
         <Stack.Screen
           name="Cart"
           component={Cart}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
           options={{ headerShown: false }}
         />
         <Stack.Screen

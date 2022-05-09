@@ -3,4 +3,5 @@ export type RootStackParamList = {
   Home: undefined;
   Cart: undefined;
   SaleSuccessful: undefined;
+  Settings: undefined;
 };

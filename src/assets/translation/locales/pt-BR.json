@@ -48,6 +48,13 @@
     },
     "General": {
       "error": "Algo deu errado, tente novamente mais tarde"
+    },
+    "Settings": {
+      "Logout": "Sair",
+      "Language": "Portugues-BR 🇧🇷",
+      "ChangeLanguage": "Pressione para mudar",
+      "Hello": "Ola",
+      "Header": "PREFERENCIAS"
     }
   }
 }

@@ -8,4 +8,7 @@
   "i18n-ally.localesPaths": [
     "src/assets/translation/locales"
   ],
+  "cSpell.words": [
+    "goback"
+  ],
 }
