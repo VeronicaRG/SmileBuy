@@ -49,6 +49,7 @@
       "ChangeLanguage": "Press to change",
       "Hello": "Hi",
       "Header": "SETTINGS"
-    }
+    },
+    "CURRENCY": "USD"
   }
 }
