@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useCallback } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
@@ -37,6 +38,89 @@ const HomeView: React.FC<HomeProps> = ({
   const navigation = useNavigation();
   const { colors, sizes } = useTheme();
 
+  const HeaderComponent = useCallback(
+    () => (
+      <>
+        <Header>
+          <BaseText color={colors.neutral._99} size="h4">
+            {t('Home.Products')}
+          </BaseText>
+          <CarView onPress={() => navigation.navigate('Cart')}>
+            <Car color={colors.logo} width={18} height={20} />
+            {!!quantity && (
+              <CarAmount>
+                <BaseText size="b8" color={colors.primary}>
+                  {quantity}
+                </BaseText>
+              </CarAmount>
+            )}
+          </CarView>
+        </Header>
+        <BaseText
+          style={{
+            paddingLeft: sizes.spaces.x4,
+            marginTop: sizes.spaces.x4,
+            marginBottom: sizes.spaces.x1,
+          }}
+          size="b8"
+          color={colors.neutral._50}>
+          {t('Home.Filter')}
+        </BaseText>
+        <FlatList
+          style={{ paddingLeft: sizes.spaces.x4 }}
+          data={categoriesList}
+          keyExtractor={item => item}
+          horizontal={true}
+          renderItem={({ item: category, index }) => (
+            <Category
+              onPress={() => onPressCategory(category)}
+              active={index === selectedCategoryIndex}
+              category={category}
+            />
+          )}
+        />
+        {!selectedCategoryIndex && (
+          <ProductsView>
+            <BaseText
+              color={colors.neutral._99}
+              style={{ paddingLeft: sizes.spaces.x4 }}
+              size="h2">
+              {t('Home.News')}
+            </BaseText>
+            <FlatList
+              data={newProductsList}
+              keyExtractor={item => `${item.id}`}
+              horizontal={true}
+              renderItem={({ item }) => (
+                <Product isBig={true} key={item.id} {...item} />
+              )}
+            />
+          </ProductsView>
+        )}
+        <BaseText
+          color={colors.neutral._99}
+          margin={{
+            left: 'x4',
+            top: selectedCategoryIndex ? 'x4' : undefined,
+          }}
+          size="h2">
+          {selectedCategoryIndex
+            ? categoriesList[selectedCategoryIndex]
+            : t('Home.List')}
+        </BaseText>
+      </>
+    ),
+    [
+      t,
+      sizes,
+      colors,
+      quantity,
+      categoriesList,
+      newProductsList,
+      selectedCategoryIndex,
+    ],
+  );
+
   return (
     <Container safeArea={insets}>
       <FlatList
@@ -46,77 +130,7 @@ const HomeView: React.FC<HomeProps> = ({
         contentContainerStyle={{
           paddingBottom: quantity ? insets.bottom + 90 : insets.bottom,
         }}
-        ListHeaderComponent={() => (
-          <>
-            <Header>
-              <BaseText color={colors.neutral._99} size="h4">
-                {t('Home.Products')}
-              </BaseText>
-              <CarView onPress={() => navigation.navigate('Cart')}>
-                <Car color={colors.logo} width={18} height={20} />
-                {!!quantity && (
-                  <CarAmount>
-                    <BaseText size="b8" color={colors.primary}>
-                      {quantity}
-                    </BaseText>
-                  </CarAmount>
-                )}
-              </CarView>
-            </Header>
-            <BaseText
-              style={{
-                paddingLeft: sizes.spaces.x4,
-                marginTop: sizes.spaces.x4,
-                marginBottom: sizes.spaces.x1,
-              }}
-              size="b8"
-              color={colors.neutral._50}>
-              {t('Home.Filter')}
-            </BaseText>
-            <FlatList
-              style={{ paddingLeft: sizes.spaces.x4 }}
-              data={categoriesList}
-              keyExtractor={item => item}
-              horizontal={true}
-              renderItem={({ item: category, index }) => (
-                <Category
-                  onPress={() => onPressCategory(category)}
-                  active={index === selectedCategoryIndex}
-                  category={category}
-                />
-              )}
-            />
-            {!selectedCategoryIndex && (
-              <ProductsView>
-                <BaseText
-                  color={colors.neutral._99}
-                  style={{ paddingLeft: sizes.spaces.x4 }}
-                  size="h2">
-                  {t('Home.News')}
-                </BaseText>
-                <FlatList
-                  data={newProductsList}
-                  keyExtractor={item => `${item.id}`}
-                  horizontal={true}
-                  renderItem={({ item }) => (
-                    <Product isBig={true} key={item.id} {...item} />
-                  )}
-                />
-              </ProductsView>
-            )}
-            <BaseText
-              color={colors.neutral._99}
-              margin={{
-                left: 'x4',
-                top: selectedCategoryIndex ? 'x4' : undefined,
-              }}
-              size="h2">
-              {selectedCategoryIndex
-                ? categoriesList[selectedCategoryIndex]
-                : t('Home.List')}
-            </BaseText>
-          </>
-        )}
+        ListHeaderComponent={HeaderComponent}
         numColumns={2}
         renderItem={({ item }) => <Product {...item} />}
       />

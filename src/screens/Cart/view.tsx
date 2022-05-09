@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useCallback } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
@@ -62,6 +63,27 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
     );
   };
 
+  const ListEmptyComponent = useCallback(
+    () => (
+      <EmptyCartView>
+        <Logo color={colors.neutral._25} width={50} height={70} />
+        <BaseText
+          align="center"
+          size="h6"
+          margin={{ horizontal: 'x20' }}
+          color={colors.neutral._45}>
+          {t('Cart.EmptyCart')}
+        </BaseText>
+        <ButtonView onPress={navigation.goBack}>
+          <BaseText size="h6" color={colors.fixedNeutral.white}>
+            {t('Cart.AddItem')}
+          </BaseText>
+        </ButtonView>
+      </EmptyCartView>
+    ),
+    [t, colors],
+  );
+
   return (
     <FullContainer safeArea={insets}>
       <Header>
@@ -72,10 +94,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
           <PageTitle size="h10" color={colors.neutral._55}>
             {t('Cart.Cart')}
           </PageTitle>
-          <Settings
-            onPress={() => {
-              navigation.navigate('Settings');
-            }}>
+          <Settings onPress={() => navigation.navigate('Settings')}>
             <SettingsIcon color={colors.neutral._55} width={20} height={20} />
           </Settings>
         </Row>
@@ -91,23 +110,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
         keyExtractor={(item: ItemCart) => `${item?.product?.id}`}
         horizontal={false}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={() => (
-          <EmptyCartView>
-            <Logo color={colors.neutral._25} width={50} height={70} />
-            <BaseText
-              align="center"
-              size="h6"
-              margin={{ horizontal: 'x20' }}
-              color={colors.neutral._45}>
-              {t('Cart.EmptyCart')}
-            </BaseText>
-            <ButtonView onPress={navigation.goBack}>
-              <BaseText size="h6" color={colors.fixedNeutral.white}>
-                {t('Cart.AddItem')}
-              </BaseText>
-            </ButtonView>
-          </EmptyCartView>
-        )}
+        ListEmptyComponent={ListEmptyComponent}
         renderItem={({ item }: { item: ItemCart }) => (
           <AddedProduct
             product={item.product}
