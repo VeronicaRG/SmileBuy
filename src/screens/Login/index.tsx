@@ -20,7 +20,7 @@ const Login: React.FC = () => {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  async function setLogin() {
+  async function handleLogin() {
     try {
       let userSchema = yup.object({
         nickname: yup
@@ -61,7 +61,7 @@ const Login: React.FC = () => {
       changeLanguage={changeCurrentLanguage}
       valueNickname={nickname}
       onChangeTextNickname={text => setNickname(text)}
-      onPress={setLogin}
+      onPress={handleLogin}
     />
   );
 };

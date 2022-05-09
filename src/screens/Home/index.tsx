@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import { useAppSelector } from '@src/redux/hooks';
 import {
-  getCategories,
-  getNewProducts,
-  getProducts,
-  getProductsByCategory,
+  fetchCategories,
+  fetchNewProducts,
+  fetchProducts,
+  fetchProductsByCategory,
 } from '@src/Services/products';
 
 import { Category } from '@ts/app/Category';
@@ -23,30 +23,33 @@ const Home: React.FC = () => {
 
   const { quantity } = useAppSelector(state => state.cart);
 
-  async function newProducts() {
-    const list = await getNewProducts();
+  async function getNewProducts() {
+    const list = await fetchNewProducts();
     setNewProductsList(list);
   }
-  async function products() {
-    const list = await getProducts();
+
+  async function getProducts() {
+    const list = await fetchProducts();
     setProductsList(list);
   }
-  async function categories() {
-    const list = await getCategories();
+
+  async function getCategories() {
+    const list = await fetchCategories();
     setCategoriesList(['Últimos', ...list]);
   }
+
   async function onPressCategory(category: string) {
     setSelectedCategoryIndex(
       categoriesList.findIndex(_category => category === _category),
     );
-    const list = await getProductsByCategory(category);
+    const list = await fetchProductsByCategory(category);
     setProductsByCategory(list);
   }
 
   useEffect(() => {
-    newProducts();
-    products();
-    categories();
+    getNewProducts();
+    getProducts();
+    getCategories();
   }, []);
 
   return (
