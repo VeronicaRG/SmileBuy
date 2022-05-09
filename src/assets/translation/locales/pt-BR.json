@@ -33,6 +33,21 @@
       "Subtitle": "Se deseja finalizar a compra clique em\nprosseguir.",
       "Confirm": "PROSSEGUIR",
       "Cancel": "CANCELAR"
+    },
+    "Language": "pt-BR 🇧🇷",
+    "Login": {
+      "Nickname": "Apelido",
+      "Button": "Entrar",
+      "Errors": {
+        "Nickname": {
+          "Required": "Apelido e obligatorio",
+          "Min": "Digite por minimo 3 caracteres ",
+          "Max": "Digite por maximo 8 caracteres"
+        }
+      }
+    },
+    "General": {
+      "error": "Algo deu errado, tente novamente mais tarde"
     }
   }
 }

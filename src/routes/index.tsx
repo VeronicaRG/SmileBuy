@@ -9,8 +9,9 @@ import RNBootSplash from 'react-native-bootsplash';
 
 import Cart from '@src/screens/Cart';
 import Home from '@src/screens/Home';
+import Login from '@src/screens/Login';
+import SaleSuccessful from '@src/screens/SaleSuccessful';
 
-import SaleSuccessful from '../screens/SaleSuccessful';
 import { RootStackParamList } from './types';
 
 export const navigationRef = createNavigationContainerRef();
@@ -23,6 +24,11 @@ const Routes: React.FC = () => {
       onReady={() => RNBootSplash.hide({ fade: true })}
       ref={navigationRef}>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Home"
           component={Home}

@@ -27,6 +27,21 @@
       "Continue": "CONTINUAR",
       "Successful": "¡EXITOSO!",
       "Description": "Compra exitosa, ¡disfrute!"
+    },
+    "Language": "es-CO 🇨🇴",
+    "Login": {
+      "Nickname": "Sobrenombre",
+      "Button": "Iniciar sesión",
+      "Errors": {
+        "Nickname": {
+          "Required": "Sobrenombre es obligatorio",
+          "Min": "Escriba al menos 3 caracteres",
+          "Max": "Escriba un máximo de 8 caracteres"
+        }
+      }
+    },
+    "General": {
+      "error": "Algo salio mal, intente nuevamente más tarde"
     }
   }
 }

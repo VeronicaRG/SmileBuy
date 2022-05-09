@@ -1,7 +1,7 @@
-import { Product } from '../@types/app/Product';
-import { User } from '../@types/app/User';
+import { Product } from '@ts/app/Product';
+import { User } from '@ts/app/User';
 
-export type AuthStore = {
+export type UserStore = {
   user?: User;
 };
 

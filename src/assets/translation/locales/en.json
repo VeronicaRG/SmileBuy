@@ -27,6 +27,21 @@
       "Continue": "CONTINUE",
       "Successful": "SUCCESSFUL!",
       "Description": "Successful order, enjoy!"
+    },
+    "Language": "en-US 🇺🇸",
+    "Login": {
+      "Nickname": "Nickname",
+      "Button": "Login",
+      "Errors": {
+        "Nickname": {
+          "Required": "Nickname is required",
+          "Min": "Type at least 3 characters",
+          "Max": "Type a maximum of 8 characters"
+        }
+      }
+    },
+    "General": {
+      "Error": "Something went wrong, try again in few minutes"
     }
   }
 }
