@@ -13,18 +13,20 @@ import Login from '@src/screens/Login';
 import SaleSuccessful from '@src/screens/SaleSuccessful';
 import Settings from '@src/screens/Settings';
 
+import { useAppSelector } from '../redux/hooks';
 import { RootStackParamList } from './types';
 
 export const navigationRef = createNavigationContainerRef();
 
 const Routes: React.FC = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
+  const { user } = useAppSelector(state => state.auth);
 
   return (
     <NavigationContainer
       onReady={() => RNBootSplash.hide({ fade: true })}
       ref={navigationRef}>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName={user ? 'Home' : 'Login'}>
         <Stack.Screen
           name="Login"
           component={Login}
