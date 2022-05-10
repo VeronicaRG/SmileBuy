@@ -13,13 +13,16 @@ export const Container = styled.View<ProductBigProps>`
     isBig ? theme.sizes.spaces.x5 : theme.sizes.spaces.x6}px;
 `;
 
-export const ImageProduct = styled.Image<ProductBigProps>`
+export const ImageProduct = styled.Image.attrs({
+  resizeMode: 'contain',
+})<ProductBigProps>`
   width: ${({ isBig }) => (isBig === true ? 166 : 143)}px;
   height: ${({ isBig }) => (isBig === true ? 184 : 140)}px;
   border-radius: ${({ isBig, theme }) =>
     isBig === true ? theme.sizes.spaces.x2 : theme.sizes.spaces.x4}px;
 
   margin-bottom: ${({ theme }) => theme.sizes.spaces.x1}px;
+  background-color: ${({ theme }) => theme.colors.fixedNeutral.white};
 `;
 
 export const Description = styled(BaseText)`
