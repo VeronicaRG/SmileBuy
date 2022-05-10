@@ -4,7 +4,6 @@ import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useDispatch } from 'react-redux';
 import { useTheme } from 'styled-components';
 
 import BaseText from '@components/BaseText';
@@ -14,8 +13,6 @@ import ProductOnCart from '@components/ProductOnCart';
 import Arrow from '@src/assets/svgs/arrow.svg';
 import Logo from '@src/assets/svgs/logo.svg';
 import SettingsIcon from '@src/assets/svgs/settings.svg';
-import { buyIt } from '@src/redux/reducers/cart';
-import { hideDialog, showDialog } from '@src/redux/reducers/dialog';
 import { ItemCart } from '@src/redux/types';
 import { formatToCurrency } from '@src/utils/number';
 
@@ -34,34 +31,15 @@ import {
 } from './styles';
 import { CartProps } from './types';
 
-const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
+const CartView: React.FC<CartProps> = ({
+  items,
+  totalAmount,
+  handleFinalizePurchase,
+}) => {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
-  const dispatch = useDispatch();
   const { colors } = useTheme();
-
-  const openModalFinalizePurchase = () => {
-    dispatch(
-      showDialog({
-        title: t('Modal.Title'),
-        subtitle: t('Modal.Subtitle'),
-        confirm: {
-          message: t('Modal.Confirm'),
-          action: () => {
-            navigation.navigate('SaleSuccessful');
-            dispatch(buyIt());
-          },
-        },
-        cancel: {
-          message: t('Modal.Cancel'),
-          action: () => {
-            dispatch(hideDialog());
-          },
-        },
-      }),
-    );
-  };
 
   const ListEmptyComponent = useCallback(
     () => (
@@ -130,10 +108,7 @@ const CartView: React.FC<CartProps> = ({ items, totalAmount }) => {
               {formatToCurrency(totalAmount)}
             </BaseText>
           </Total>
-          <Button
-            onPress={openModalFinalizePurchase}
-            title={t('Cart.Finish')}
-          />
+          <Button onPress={handleFinalizePurchase} title={t('Cart.Finish')} />
         </ViewTotal>
       )}
     </FullContainer>
