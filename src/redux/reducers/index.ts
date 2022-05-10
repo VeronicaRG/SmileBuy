@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
+import auth from './auth';
 import cart from './cart';
 import dialog from './dialog';
 import preferences from './preferences';
-import user from './user';
 
 const reducers = combineReducers({
-  user,
+  auth,
   preferences,
   cart,
   dialog,

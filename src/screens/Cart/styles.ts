@@ -85,4 +85,5 @@ export const Settings = styled.TouchableOpacity`
   height: 30px;
   border-radius: ${({ theme }) => theme.sizes.radius.x6}px;
   align-items: center;
+  justify-content: center;
 `;

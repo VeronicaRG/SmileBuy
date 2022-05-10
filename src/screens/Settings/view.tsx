@@ -28,7 +28,7 @@ const SettingsView: React.FC<SettingsProps> = ({
   const { t } = useTranslation();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const { user } = useAppSelector(state => state.user);
+  const { user } = useAppSelector(state => state.auth);
 
   return (
     <Container safeArea={insets}>

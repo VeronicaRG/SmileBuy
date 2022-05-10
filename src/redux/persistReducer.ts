@@ -9,7 +9,7 @@ const persistReducers = (rootReducer: RootReducerType) => {
     {
       key: 'Smile Buy',
       storage: AsyncStorage,
-      whitelist: [''],
+      whitelist: ['auth', 'cart'],
     },
     rootReducer,
   );

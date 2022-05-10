@@ -7,7 +7,7 @@ import { UserStore } from '../types';
 const initialState: UserStore = {};
 
 export const authSlice = createSlice({
-  name: 'user',
+  name: 'auth',
   initialState: initialState,
   reducers: {
     setUser: (state, action: PayloadAction<User>) => {

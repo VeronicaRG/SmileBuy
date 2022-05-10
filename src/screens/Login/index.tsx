@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 
 import { useAppSelector } from '@src/redux/hooks';
-import { setUser } from '@src/redux/reducers/user';
+import { setUser } from '@src/redux/reducers/auth';
 import { changeCurrentLanguage } from '@src/utils/language';
 
 import LoginView from './view';
@@ -15,7 +15,7 @@ import LoginView from './view';
 const Login: React.FC = () => {
   const [nickname, setNickname] = useState('');
 
-  const { user } = useAppSelector(state => state.user);
+  const { user } = useAppSelector(state => state.auth);
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const { t } = useTranslation();
