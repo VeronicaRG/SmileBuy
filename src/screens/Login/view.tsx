@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { StatusBar } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from 'styled-components';
 
@@ -30,6 +31,7 @@ const LoginView: React.FC<LoginProps> = ({
 
   return (
     <Container safeArea={insets}>
+      <StatusBar barStyle={'light-content'} />
       <ViewButtonChangeLanguage>
         <ChangeLanguage onPress={changeLanguage}>
           <BaseText align="center" color={colors.fixedNeutral.white} size="bn">
