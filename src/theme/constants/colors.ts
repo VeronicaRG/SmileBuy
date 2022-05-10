@@ -29,6 +29,10 @@ export const colors = {
       positive: '#5A9ACF',
       negative: '#FD746A',
     },
+    skeleton: {
+      boneColor: '#E1E9EE',
+      highlightColor: '#F2F8FC',
+    },
   },
   dark: {
     primary: '#8775FE',
@@ -59,6 +63,10 @@ export const colors = {
     feedback: {
       positive: '#5A9ACF',
       negative: '#FD746A',
+    },
+    skeleton: {
+      boneColor: '#121212',
+      highlightColor: '#333333',
     },
   },
 };

@@ -11,6 +11,7 @@ import BaseText from '@components/BaseText';
 import Button from '@components/Button';
 import Category from '@components/Category';
 import Product from '@components/Product';
+import SkeletonHome from '@components/SkeletonHome';
 
 import Car from '@src/assets/svgs/logo.svg';
 
@@ -71,6 +72,7 @@ const HomeView: React.FC<HomeProps> = ({
           data={categoriesList}
           keyExtractor={item => item}
           horizontal={true}
+          ListEmptyComponent={() => <SkeletonHome place="categories" />}
           renderItem={({ item: category, index }) => (
             <Category
               onPress={() => onPressCategory(category)}
@@ -91,6 +93,7 @@ const HomeView: React.FC<HomeProps> = ({
               data={newProductsList}
               keyExtractor={item => `${item.id}`}
               horizontal={true}
+              ListEmptyComponent={() => <SkeletonHome place="newProducts" />}
               renderItem={({ item }) => (
                 <Product isBig={true} key={item.id} {...item} />
               )}
@@ -131,6 +134,7 @@ const HomeView: React.FC<HomeProps> = ({
           paddingBottom: quantity ? insets.bottom + 90 : insets.bottom,
         }}
         ListHeaderComponent={HeaderComponent}
+        ListEmptyComponent={() => <SkeletonHome />}
         numColumns={2}
         renderItem={({ item }) => <Product {...item} />}
       />
