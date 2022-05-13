@@ -13,11 +13,15 @@ export const theme = {
   sizes,
 } as const;
 
-export const Theme: React.FC = props => {
+export const Theme: React.FC = ({ children }) => {
   const deviceTheme = useColorScheme() || 'light';
   const themeColors = colors[deviceTheme];
 
-  return <ThemeProvider theme={{ ...theme, colors: themeColors }} {...props} />;
+  return (
+    <ThemeProvider theme={{ ...theme, colors: themeColors }}>
+      {children}
+    </ThemeProvider>
+  );
 };
 
 export default Theme;
