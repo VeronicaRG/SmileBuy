@@ -40,9 +40,9 @@
       "Button": "Entrar",
       "Errors": {
         "Nickname": {
-          "Required": "Apelido e obligatorio",
-          "Min": "Digite por minimo 3 caracteres ",
-          "Max": "Digite por maximo 8 caracteres"
+          "Required": "Apelido e obrigatório",
+          "Min": "Digite por mínimo 3 caracteres ",
+          "Max": "Digite por máximo 8 caracteres"
         }
       }
     },
@@ -51,7 +51,7 @@
     },
     "Settings": {
       "Logout": "Sair",
-      "Language": "Portugues-BR 🇧🇷",
+      "Language": "Português-BR 🇧🇷",
       "ChangeLanguage": "Pressione para mudar",
       "Hello": "Ola",
       "Header": "PREFERENCIAS"

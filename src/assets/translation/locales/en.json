@@ -7,7 +7,7 @@
       "Products": "Products",
       "List": "List",
       "Filter": "FILTER CATEGORY",
-      "Car": "GO TO THE CAR"
+      "Car": "GO TO THE CART"
     },
     "Cart": {
       "EmptyCart": "NO ITEMS ADDED TO YOUR CART",
@@ -26,7 +26,7 @@
     "SaleSuccessful": {
       "Continue": "CONTINUE",
       "Successful": "SUCCESSFUL!",
-      "Description": "Successful order, enjoy!"
+      "Description": "Successful order, enjoy it!"
     },
     "Language": "en-US 🇺🇸",
     "Login": {

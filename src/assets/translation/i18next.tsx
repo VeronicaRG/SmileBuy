@@ -1,6 +1,7 @@
-import { INITIAL_LANGUAGE } from '@src/utils/constants';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+
+import { INITIAL_LANGUAGE } from '@src/utils/constants';
 
 import en from './locales/en.json';
 import es from './locales/es.json';

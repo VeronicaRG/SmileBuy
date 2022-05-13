@@ -13,11 +13,11 @@
       "Cart": "CARRITO",
       "MyCart": "Mi Carrito",
       "AddItem": "ADICIONAR PRODUCTOS",
-      "EmptyCart": "NI UN PRODUCTO ADDICIONADO EN EL CARRITO",
+      "EmptyCart": "NI UN PRODUCTO ADICIONADO EN EL CARRITO",
       "Total": "Total",
       "Finish": "FINALIZAR COMPRA",
       "Modal": {
-        "Title": "Remover el artículo",
+        "Title": "Eliminar el artículo",
         "Subtitle": "Si desea eliminar el artículo del carrito, haga clic en\n\ncontinuar.",
         "Confirm": "CONTINUAR",
         "Cancel": "CANCELAR"
@@ -27,6 +27,12 @@
       "Continue": "CONTINUAR",
       "Successful": "¡EXITOSO!",
       "Description": "Compra exitosa, ¡disfrute!"
+    },
+    "Modal": {
+      "Title": "Finalizar la compra",
+      "Subtitle": "Si desea finalizar la compra, haga clic en\n\ncontinuar.",
+      "Confirm": "CONTINUAR",
+      "Cancel": "CANCELAR"
     },
     "Language": "es-CO 🇨🇴",
     "Login": {
